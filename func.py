@@ -62,14 +62,19 @@ def post(server, port, mail_u, mail_p, sendto, tags, img_num, ftype, perm):
     body += tags
     text = MIMEText(body)
     msg.attach(text)
+    print("Posting"),
     for a in range(0, len(img_num)):
+        print("."),
         image = MIMEImage(img_data, name=os.path.basename("resources/images/" + tags + "/" + "image" + a + "." + ftype))
         msg.attach(image)
-    
-    s = smtplib.SMTP(serv, port)
-    s.ehlo()
-    s.starttls()
-    s.ehlo()
-    s.login(user, passw)
-    s.sendmail(user, sendto, msg.as_string())
-    s.quit()
+    try:
+        s = smtplib.SMTP(serv, port)
+        s.ehlo()
+        s.starttls()
+        s.ehlo()
+        s.login(user, passw)
+        s.sendmail(user, sendto, msg.as_string())
+        s.quit()
+        print("Success!")
+    except Exception:
+        print("Failed!")
