@@ -1,0 +1,12 @@
+smtp.gmail.com
+587
+placeholder@gmail.com
+password
+fwlkbnakWndwECS@tumblr.com
+5
+1
+0
+0
+jpg
+12
+not completely necessary
