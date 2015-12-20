@@ -23,7 +23,6 @@ mail_p = lst[3]
 sendto = lst[4]
 ftype = lst[9]
 permtag = lst[11]
-lst.close()
 
 
 # Primary Loop
@@ -47,15 +46,3 @@ for a in range(loop_out, len(tags)):
         lst[7] = loop_in
         lst[8] = post_sum
     time.sleep(3600 * sleep_t)
-# loop1(outer loop variable +1){
-#  clear data;
-#  write tags to data.txt(a);
-#  split data.txt to list;
-#  loop2(inner loop variable +1){
-#   ctag = data[inner loop variable];
-#   download images from tags(inner loop variable);
-#   post images with tags;
-#   write variables to config;
-#  }
-#  sleep;
-# }
