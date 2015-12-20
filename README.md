@@ -25,3 +25,5 @@ number of total posts
 image file type
 
 sleep time(hours)
+
+permanent tags (appear in all posts)
