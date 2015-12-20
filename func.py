@@ -31,7 +31,7 @@ def permutations(iterable, r=None):
 
 def getImages(term, img_num, ftype):
     tmplst = []
-    data = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + term + "&rsz=" + img_num)
+    data = urllib.urlopen("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + term + "&rsz=" + str(img_num))
     for b in range(1, data.count("unescapedUrl")):
         url = data[find_n(data, "\"unescapedUrl\":\"", b):find_n(data, "\",\"url", b)]
         url= url[16:]
