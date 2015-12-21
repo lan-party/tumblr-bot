@@ -35,9 +35,9 @@ for a in range(loop_out, len(tags)):
     data = open("resources/data.txt", "r").read().splitlines()
     # Secondary Loop
     for b in range(loop_in, len(data)):
-        ctag = data[b]
+        ctag = str(data[b])
         func.getImages(ctag, image_num, ftype)
-        post(server, port, mail_u, mail_p, sendto, ctag.split(), image_num, ftype, permtag)
+        func.post(server, port, mail_u, mail_p, sendto, ctag.split(), image_num, ftype, permtag)
         # Write variables to config and clear images
         func.clearImages(ctag)
         post_sum += 1
